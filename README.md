@@ -2,7 +2,15 @@
 =========
 Floating speed limit monitor for Android with speedometer and warning features.
 
-[![Get it on Google Play](http://i.imgur.com/PeDVOwW.png)](https://play.google.com/store/apps/details?id=com.pluscubed.velociraptor)
+[![Get it on GitHub](https://raw.githubusercontent.com/ErdbeerbaerLP/velociraptor/master/badge.png)](https://github.com/ErdbeerbaerLP/velociraptor/releases)
+
+Get unmodified version here: [PlayStore](https://play.google.com/store/apps/details?id=com.pluscubed.velociraptor) | [GitHub](https://github.com/pluscubed/velociraptor)
+
+### Modifications
+Due to the original app being left discontinued, I have decided to fix a few issues
+
+This version of the app fixes the following bugs:
+- App list settings not saving since 1.7.0
 
 ### Development
 - Put `google-services.json` from Firebase in /app/
