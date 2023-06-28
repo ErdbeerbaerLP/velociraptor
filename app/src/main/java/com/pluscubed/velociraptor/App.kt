@@ -32,7 +32,7 @@ class App : Application() {
         Glide.get(this)
                 .register(AppInfo::class.java, InputStream::class.java, AppInfoIconLoader.Factory())
 
-        if (PrefUtils.isAllMapApps(this)) {
+        if (PrefUtils.isFirstRun(this)) {
             GlobalScope.launch {
                 try {
                     val mapApps =
