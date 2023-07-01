@@ -10,7 +10,9 @@ Get unmodified version here: [PlayStore](https://play.google.com/store/apps/deta
 Due to the original app being left discontinued, I have decided to fix a few issues
 
 This version of the app fixes the following bugs:
-- App list settings not saving since 1.7.0
+- App list resetting on launch since 1.7.0
+- Background Location permissions on API 29+
+- App glitching when rotating the screen
 
 ### Development
 - Put `google-services.json` from Firebase in /app/

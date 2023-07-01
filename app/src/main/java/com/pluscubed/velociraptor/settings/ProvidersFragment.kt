@@ -1,6 +1,8 @@
 package com.pluscubed.velociraptor.settings
 
 import android.annotation.SuppressLint
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -324,6 +326,13 @@ class ProvidersFragment : Fragment() {
     }
 
     fun showSupportDialog() {
+        val builder = AlertDialog.Builder(this.context)
+        builder.setTitle(R.string.support_development)
+        builder.setMessage(R.string.support_development_disabled)
+        builder.setPositiveButton("OK"){ dialog, which ->{}}
+        builder.show()
+
+        if(true) return; // Keep original code
         if (!isBillingManagerReady) {
             view?.let {
                 Snackbar.make(it, R.string.in_app_unavailable, Snackbar.LENGTH_SHORT).show()

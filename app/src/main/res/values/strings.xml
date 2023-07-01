@@ -175,5 +175,8 @@
     <string name="speed_limit_info_explanation">Speed limit information comes from these providers</string>
     <string name="speed_limit_info_explanation_desc">Coverage and accuracy vary. You can help contribute by adding or editing speed limit data.</string>
     <string name="permissions_explanation">To use Velociraptor, grant these permissions:</string>
+    <string name="support_development_disabled">To Support the original developer, pluscubed, you will need to install
+        the original app and click this button in it again. Supporting via this fork is sadly not possible.
+    </string>
 
 </resources>
