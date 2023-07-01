@@ -24,6 +24,7 @@
 
         <activity
             android:name=".settings.SettingsActivity"
+            android:configChanges="orientation|screenSize"
             android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -79,6 +80,5 @@
         <meta-data
             android:name="google_analytics_adid_collection_enabled"
             android:value="false" />
-
     </application>
 </manifest>

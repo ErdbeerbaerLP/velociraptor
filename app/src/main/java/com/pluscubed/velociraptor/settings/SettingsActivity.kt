@@ -1,6 +1,7 @@
 package com.pluscubed.velociraptor.settings
 
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
@@ -39,6 +40,7 @@ class SettingsActivity : AppCompatActivity() {
     private val generalFragment = GeneralFragment()
     private val advancedFragment = AdvancedFragment()
     private var active: Fragment = permissionsFragment
+    private var bottomNavigationSelectedItemId = R.id.action_permissions
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -100,6 +102,12 @@ class SettingsActivity : AppCompatActivity() {
 
         PrefUtils.setFirstRun(this, false)
         PrefUtils.setVersionCode(this, BuildConfig.VERSION_CODE)
+        // Zustand der BottomNavigationView wiederherstellen
+        if (savedInstanceState != null) {
+            bottomNavigationSelectedItemId = savedInstanceState.getInt("selectedItemId", R.id.action_advanced)
+        }
+        bottomNavigationView.selectedItemId = bottomNavigationSelectedItemId
+
     }
 
     fun showSupportDialog() {
@@ -110,10 +118,19 @@ class SettingsActivity : AppCompatActivity() {
         super.onPause()
         startLimitService(false)
     }
-
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_settings, menu)
         return true
+    }
+    override fun onSaveInstanceState(outState: Bundle) {
+        // Zustand der BottomNavigationView speichern
+        outState.putInt("selectedItemId", bottomNavigationView.selectedItemId)
+
+        super.onSaveInstanceState(outState)
+    }
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
