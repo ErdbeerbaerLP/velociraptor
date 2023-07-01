@@ -95,10 +95,16 @@ class PermissionsFragment : Fragment() {
         }
 
         enableLocationButton.setOnClickListener { v ->
-            requestPermissions(
-                    arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
-                    REQUEST_LOCATION
-            )
+            if (Build.VERSION.SDK_INT < 29)
+                requestPermissions(
+                        arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+                        REQUEST_LOCATION
+                )
+            else
+                requestPermissions(
+                        arrayOf(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_BACKGROUND_LOCATION),
+                        REQUEST_LOCATION
+                )
         }
     }
 
